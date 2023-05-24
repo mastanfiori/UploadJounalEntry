@@ -1,0 +1,13 @@
+{
+  "application": "fin.gl.journalentry.upload",
+  "version": "9.0.2",
+  "buildNumber": "7",
+  "buildId": "7",
+  "branch": "detached",
+  "revision": "741bbdc41539686692167fc4846ff4b280654905",
+  "GitURL": "",
+  "buildStatus": "${env.buildStatus}",
+  "translationComplete": "${env.translationComplete}",
+  "cidi": "${env.cidi}",
+  "cfdCM": "${env.cfdCM}"
+}

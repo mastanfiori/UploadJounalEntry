@@ -1,0 +1,53 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="sap.fin.gl.journalentry.upload.DownloadDialogFragment"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns:smartfield="sap.ui.comp.smartfield">
+	<Dialog id="fin.gl.journalentry.upload.dialog" title="{i18n>DownloadDialogTitle}" draggable="false"
+	        afterClose="onDownloadDialogAfterClose" contentWidth="650px" contentHeight="250px">
+	    <content><Panel height="250px" width="650px">
+		<content>
+		    <f:SimpleForm id="fin.gl.journalentry.upload.simpleForm" layout="ResponsiveGridLayout" editable="true"
+						labelSpanL="3" labelSpanM="3"
+						emptySpanL="3" emptySpanM="3"
+						columnsL="1" columnsM="1">
+						
+				<f:content>
+					<Label id="languageLabel" class="sapUiTinyMarginTopBottom" text="{i18n>TemplateLanguage}"/>
+					<Select id="sap.fin.gl.journalentry.upload.download.languageDropdown"
+						showSecondaryValues= "true"
+						items="{
+							path: '/Languages',
+							sorter: { path: 'Sptxt' }}"
+					    selectedKey="{appView>/language}">
+						<core:ListItem key="{Spras}" text="{Sptxt}" additionalText="{Spras}"/>
+					</Select>
+							
+					<Label id="formatLabel" class="sapUiTinyMarginTopBottom" text="{i18n>Format}"/>
+					<RadioButtonGroup id="fin.gl.journalentry.upload.radioButtonGroup" class="sapUiMediumMarginBottom" selectedIndex="0" ariaLabelledBy="formatLabel">
+					    <buttons>
+					        <RadioButton id="sap.fin.gl.journalentry.upload.download.Excel" class="sapUiSizeCozy" text="{i18n>Excel}" textAlign="Right"/>
+					        <RadioButton id="sap.fin.gl.journalentry.upload.download.CSV_Comma" class="sapUiSizeCozy" text="{i18n>CSV_Comma}" textAlign="Right"/>
+					        <RadioButton id="sap.fin.gl.journalentry.upload.download.CSV_Semicolon" class="sapUiSizeCozy" text="{i18n>CSV_Semicolon}" textAlign="Right"/>
+					    </buttons>
+					</RadioButtonGroup>
+				</f:content>
+			</f:SimpleForm>
+		    
+		</content>
+		</Panel></content>
+		<beginButton>
+		    <Button id="fin.gl.journalentry.upload.button.download" text="{i18n>Download}" type="Emphasized" press="handleDownloadPress"/>
+		</beginButton>
+		<endButton>
+			<Button id="sap.fin.gl.journalentry.upload.download.Cancel" text="{i18n>Cancel}" press="onDownloadCancelPressed" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

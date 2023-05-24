@@ -1,0 +1,223 @@
+{
+    "_version": "1.6.0",
+    "sap.app": {
+        "id": "fin.gl.journalentry.upload",
+        "type": "application",
+        "resources": "resources.json",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "9.0.2"
+        },
+        "ach": "FI-FIO-GL",
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/FAC_GL_DOCUMENT_POST_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "uploadGLDocument": {
+                    "semanticObject": "AccountingDocument",
+                    "action": "uploadGLDocument",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
+                }
+            },
+            "outbounds": {
+                "postGLDocument": {
+                    "semanticObject": "AccountingDocument",
+                    "action": "postGLDocument",
+                    "parameters": {
+                        "TmpId": {},
+                        "TmpIdType": {}
+                    }
+                }
+            }
+        },
+        "sourceTemplate": {
+            "id": "@sap/ux-app-migrator:freestyle",
+            "version": "1.9.6",
+            "toolsId": "45937a79-4474-4476-93dd-fec51a9c8389"
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/fin_glje_upld"
+    },
+    "sap.copilot": {
+        "_version": "1.0.0",
+        "contextAnalysis": {
+            "whitelistedEntityTypes": [
+                "FAC_FINANCIALS_POSTING_SRV.UploadedDocWorklistItem",
+                "FAC_FINANCIALS_POSTING_SRV.UploadedDocWorklistItems"
+            ]
+        }
+    },
+    "sap.fiori": {
+        "_version": "1.1.0",
+        "registrationIds": [
+            "F2548"
+        ],
+        "archeType": "transactional"
+    },
+    "sap.ui": {
+        "_version": "1.1.0",
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://task",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": false
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_bluecrystal"
+        ]
+    },
+    "sap.ui5": {
+        "_version": "1.1.0",
+        "rootView": "fin.gl.journalentry.upload.view.App",
+        "dependencies": {
+            "minUI5Version": "1.90.2",
+            "libs": {
+                "sap.ui.core": {
+                    "minVersion": "1.38.0"
+                },
+                "sap.m": {
+                    "minVersion": "1.38.0"
+                },
+                "sap.f": {
+                    "minVersion": "1.38.0",
+                    "lazy": true
+                },
+                "sap.ushell": {
+                    "minVersion": "1.38.0",
+                    "lazy": true
+                },
+                "sap.collaboration": {
+                    "minVersion": "1.38",
+                    "lazy": true
+                },
+                "sap.ui.generic.app": {
+                    "minVersion": "1.38.0",
+                    "lazy": true
+                },
+                "sap.ui.layout": {
+                    "minVersion": "1.38.0",
+                    "lazy": true
+                },
+                "sap.ui.comp": {
+                    "minVersion": "1.38.0",
+                    "lazy": true
+                },
+                "sap.ui.table": {
+                    "minVersion": "1.38.0",
+                    "lazy": true
+                },
+                "sap.uxap": {
+                    "minVersion": "1.38.0",
+                    "lazy": true
+                },
+                "sap.ui.unified": {
+                    "minVersion": "1.38.0",
+                    "lazy": true
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": false
+        },
+        "config": {
+            "sapFiori2Adaptation": true,
+            "fullWidth": "true"
+        },
+        "models": {
+            "i18n": {
+                "preload": false,
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "fin.gl.journalentry.upload.i18n.i18n"
+                }
+            },
+            "": {
+                "preload": true,
+                "dataSource": "mainService",
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "metadataUrlParams": {
+                        "sap-documentation": "heading,quickinfo",
+                        "sap-value-list": "none"
+                    }
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "fin.gl.journalentry.upload.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "bypassed": {
+                    "target": [
+                        "notFound"
+                    ]
+                },
+                "async": false
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "upload",
+                    "target": "upload"
+                },
+                {
+                    "pattern": "{?query}",
+                    "name": "upload-external",
+                    "target": "upload"
+                },
+                {
+                    "pattern": "DisplayMessages",
+                    "name": "message",
+                    "target": "message"
+                }
+            ],
+            "targets": {
+                "upload": {
+                    "viewName": "Upload",
+                    "viewId": "upload",
+                    "viewLevel": 1
+                },
+                "message": {
+                    "viewName": "DisplayMessage",
+                    "viewId": "message",
+                    "viewLevel": 2
+                },
+                "objectNotFound": {
+                    "viewName": "ObjectNotFound",
+                    "viewId": "objectNotFound"
+                },
+                "notFound": {
+                    "viewName": "NotFound",
+                    "viewId": "notFound"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,954 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "fin/gl/journalentry/upload/Component.js",
+			"size": 2784,
+			"isDebug": true,
+			"required": [
+				"fin/gl/journalentry/upload/controller/ErrorHandler.js",
+				"fin/gl/journalentry/upload/model/models.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/UIComponent.js"
+			]
+		},
+		{
+			"name": "Component-h2-preload-dbg.js",
+			"module": "fin/gl/journalentry/upload/Component-h2-preload.js",
+			"size": 7612,
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"sap/m/App.js",
+				"sap/m/Button.js",
+				"sap/m/DateRangeSelection.js",
+				"sap/m/Dialog.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/Label.js",
+				"sap/m/Link.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessagePage.js",
+				"sap/m/MessageToast.js",
+				"sap/m/ObjectStatus.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Panel.js",
+				"sap/m/RadioButton.js",
+				"sap/m/RadioButtonGroup.js",
+				"sap/m/Select.js",
+				"sap/m/Text.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/VBox.js",
+				"sap/m/semantic/FullscreenPage.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/generic/app/navigation/service/NavigationHandler.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/table/Column.js",
+				"sap/ui/table/Table.js",
+				"sap/ui/table/plugins/MultiSelectionPlugin.js",
+				"sap/ui/thirdparty/bignumber.js",
+				"sap/ui/unified/FileUploader.js"
+			],
+			"included": [
+				"fin/gl/journalentry/upload/Component.js",
+				"fin/gl/journalentry/upload/manifest.json",
+				"fin/gl/journalentry/upload/controller/App.controller.js",
+				"fin/gl/journalentry/upload/controller/BaseController.js",
+				"fin/gl/journalentry/upload/controller/ErrorHandler.js",
+				"fin/gl/journalentry/upload/controller/NotFound.controller.js",
+				"fin/gl/journalentry/upload/controller/Upload.controller.js",
+				"fin/gl/journalentry/upload/i18n/i18n.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ar.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_bg.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ca.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_cs.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_da.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_de.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_el.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_en.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_en_US_sappsd.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_en_US_saptrc.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_es.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_et.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_fi.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_fr.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_hi.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_hr.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_hu.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_it.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_iw.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ja.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_kk.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ko.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_lt.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_lv.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ms.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_nl.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_no.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_pl.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_pt.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ro.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ru.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sh.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sk.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sl.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sv.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_th.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_tr.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_uk.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_vi.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_zh_CN.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_zh_TW.properties",
+				"fin/gl/journalentry/upload/model/formatter.js",
+				"fin/gl/journalentry/upload/model/models.js",
+				"fin/gl/journalentry/upload/util/Constants.js",
+				"fin/gl/journalentry/upload/util/Util.js",
+				"fin/gl/journalentry/upload/view/App.view.xml",
+				"fin/gl/journalentry/upload/view/DownloadDialog.fragment.xml",
+				"fin/gl/journalentry/upload/view/NotFound.view.xml",
+				"fin/gl/journalentry/upload/view/ObjectNotFound.view.xml",
+				"fin/gl/journalentry/upload/view/Upload.view.xml"
+			]
+		},
+		{
+			"name": "Component-h2-preload.js",
+			"module": "fin/gl/journalentry/upload/Component-h2-preload.js",
+			"size": 7526,
+			"merged": true,
+			"required": [
+				"sap/m/App.js",
+				"sap/m/Button.js",
+				"sap/m/DateRangeSelection.js",
+				"sap/m/Dialog.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/Label.js",
+				"sap/m/Link.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessagePage.js",
+				"sap/m/MessageToast.js",
+				"sap/m/ObjectStatus.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Panel.js",
+				"sap/m/RadioButton.js",
+				"sap/m/RadioButtonGroup.js",
+				"sap/m/Select.js",
+				"sap/m/Text.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/VBox.js",
+				"sap/m/semantic/FullscreenPage.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/generic/app/navigation/service/NavigationHandler.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/table/Column.js",
+				"sap/ui/table/Table.js",
+				"sap/ui/table/plugins/MultiSelectionPlugin.js",
+				"sap/ui/thirdparty/bignumber.js",
+				"sap/ui/unified/FileUploader.js"
+			],
+			"included": [
+				"fin/gl/journalentry/upload/Component.js",
+				"fin/gl/journalentry/upload/manifest.json",
+				"fin/gl/journalentry/upload/controller/App.controller.js",
+				"fin/gl/journalentry/upload/controller/BaseController.js",
+				"fin/gl/journalentry/upload/controller/ErrorHandler.js",
+				"fin/gl/journalentry/upload/controller/NotFound.controller.js",
+				"fin/gl/journalentry/upload/controller/Upload.controller.js",
+				"fin/gl/journalentry/upload/i18n/i18n.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ar.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_bg.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ca.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_cs.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_da.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_de.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_el.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_en.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_en_US_sappsd.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_en_US_saptrc.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_es.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_et.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_fi.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_fr.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_hi.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_hr.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_hu.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_it.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_iw.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ja.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_kk.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ko.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_lt.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_lv.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ms.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_nl.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_no.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_pl.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_pt.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ro.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ru.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sh.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sk.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sl.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sv.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_th.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_tr.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_uk.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_vi.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_zh_CN.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_zh_TW.properties",
+				"fin/gl/journalentry/upload/model/formatter.js",
+				"fin/gl/journalentry/upload/model/models.js",
+				"fin/gl/journalentry/upload/util/Constants.js",
+				"fin/gl/journalentry/upload/util/Util.js",
+				"fin/gl/journalentry/upload/view/App.view.xml",
+				"fin/gl/journalentry/upload/view/DownloadDialog.fragment.xml",
+				"fin/gl/journalentry/upload/view/NotFound.view.xml",
+				"fin/gl/journalentry/upload/view/ObjectNotFound.view.xml",
+				"fin/gl/journalentry/upload/view/Upload.view.xml"
+			]
+		},
+		{
+			"name": "Component-preload.js",
+			"module": "fin/gl/journalentry/upload/Component-preload.js",
+			"size": 452948,
+			"merged": true,
+			"required": [
+				"sap/m/App.js",
+				"sap/m/Button.js",
+				"sap/m/DateRangeSelection.js",
+				"sap/m/Dialog.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/Label.js",
+				"sap/m/Link.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessagePage.js",
+				"sap/m/MessageToast.js",
+				"sap/m/ObjectStatus.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Panel.js",
+				"sap/m/RadioButton.js",
+				"sap/m/RadioButtonGroup.js",
+				"sap/m/Select.js",
+				"sap/m/Text.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/VBox.js",
+				"sap/m/semantic/FullscreenPage.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/generic/app/navigation/service/NavigationHandler.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/table/Column.js",
+				"sap/ui/table/Table.js",
+				"sap/ui/table/plugins/MultiSelectionPlugin.js",
+				"sap/ui/thirdparty/bignumber.js",
+				"sap/ui/unified/FileUploader.js"
+			],
+			"included": [
+				"fin/gl/journalentry/upload/Component.js",
+				"fin/gl/journalentry/upload/controller/App.controller.js",
+				"fin/gl/journalentry/upload/controller/BaseController.js",
+				"fin/gl/journalentry/upload/controller/ErrorHandler.js",
+				"fin/gl/journalentry/upload/controller/NotFound.controller.js",
+				"fin/gl/journalentry/upload/controller/Upload.controller.js",
+				"fin/gl/journalentry/upload/i18n/i18n.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ar.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_bg.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ca.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_cs.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_da.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_de.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_el.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_en.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_en_US_sappsd.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_en_US_saptrc.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_es.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_et.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_fi.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_fr.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_hi.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_hr.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_hu.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_it.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_iw.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ja.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_kk.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ko.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_lt.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_lv.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ms.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_nl.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_no.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_pl.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_pt.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ro.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_ru.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sh.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sk.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sl.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_sv.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_th.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_tr.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_uk.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_vi.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_zh_CN.properties",
+				"fin/gl/journalentry/upload/i18n/i18n_zh_TW.properties",
+				"fin/gl/journalentry/upload/manifest.json",
+				"fin/gl/journalentry/upload/model/formatter.js",
+				"fin/gl/journalentry/upload/model/models.js",
+				"fin/gl/journalentry/upload/util/Constants.js",
+				"fin/gl/journalentry/upload/util/Util.js",
+				"fin/gl/journalentry/upload/view/App.view.xml",
+				"fin/gl/journalentry/upload/view/DownloadDialog.fragment.xml",
+				"fin/gl/journalentry/upload/view/NotFound.view.xml",
+				"fin/gl/journalentry/upload/view/ObjectNotFound.view.xml",
+				"fin/gl/journalentry/upload/view/Upload.view.xml"
+			]
+		},
+		{
+			"name": "Component.js",
+			"module": "fin/gl/journalentry/upload/Component.js",
+			"size": 1119,
+			"required": [
+				"fin/gl/journalentry/upload/controller/ErrorHandler.js",
+				"fin/gl/journalentry/upload/model/models.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/UIComponent.js"
+			]
+		},
+		{
+			"name": "controller/App-dbg.controller.js",
+			"module": "fin/gl/journalentry/upload/controller/App.controller.js",
+			"size": 1170,
+			"isDebug": true,
+			"required": [
+				"fin/gl/journalentry/upload/controller/BaseController.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/App.controller.js",
+			"module": "fin/gl/journalentry/upload/controller/App.controller.js",
+			"size": 743,
+			"required": [
+				"fin/gl/journalentry/upload/controller/BaseController.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/BaseController-dbg.js",
+			"module": "fin/gl/journalentry/upload/controller/BaseController.js",
+			"size": 3245,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/generic/app/navigation/service/NavigationHandler.js"
+			]
+		},
+		{
+			"name": "controller/BaseController.js",
+			"module": "fin/gl/journalentry/upload/controller/BaseController.js",
+			"size": 1268,
+			"required": [
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/generic/app/navigation/service/NavigationHandler.js"
+			]
+		},
+		{
+			"name": "controller/ErrorHandler-dbg.js",
+			"module": "fin/gl/journalentry/upload/controller/ErrorHandler.js",
+			"size": 3376,
+			"isDebug": true,
+			"required": [
+				"sap/m/MessageBox.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "controller/ErrorHandler.js",
+			"module": "fin/gl/journalentry/upload/controller/ErrorHandler.js",
+			"size": 1573,
+			"required": [
+				"sap/m/MessageBox.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "controller/NotFound-dbg.controller.js",
+			"module": "fin/gl/journalentry/upload/controller/NotFound.controller.js",
+			"size": 471,
+			"isDebug": true,
+			"required": [
+				"fin/gl/journalentry/upload/controller/BaseController.js"
+			]
+		},
+		{
+			"name": "controller/NotFound.controller.js",
+			"module": "fin/gl/journalentry/upload/controller/NotFound.controller.js",
+			"size": 319,
+			"required": [
+				"fin/gl/journalentry/upload/controller/BaseController.js"
+			]
+		},
+		{
+			"name": "controller/Upload-dbg.controller.js",
+			"module": "fin/gl/journalentry/upload/controller/Upload.controller.js",
+			"size": 69377,
+			"isDebug": true,
+			"required": [
+				"fin/gl/journalentry/upload/controller/BaseController.js",
+				"fin/gl/journalentry/upload/model/formatter.js",
+				"fin/gl/journalentry/upload/util/Constants.js",
+				"fin/gl/journalentry/upload/util/Util.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/Upload.controller.js",
+			"module": "fin/gl/journalentry/upload/controller/Upload.controller.js",
+			"size": 34025,
+			"required": [
+				"fin/gl/journalentry/upload/controller/BaseController.js",
+				"fin/gl/journalentry/upload/model/formatter.js",
+				"fin/gl/journalentry/upload/util/Constants.js",
+				"fin/gl/journalentry/upload/util/Util.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "i18n/i18n.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n.properties",
+			"size": 7079,
+			"locale": "",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ar.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_ar.properties",
+			"size": 16911,
+			"locale": "ar",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_bg.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_bg.properties",
+			"size": 20965,
+			"locale": "bg",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ca.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_ca.properties",
+			"size": 7703,
+			"locale": "ca",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cs.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_cs.properties",
+			"size": 8624,
+			"locale": "cs",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_da.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_da.properties",
+			"size": 7034,
+			"locale": "da",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_de.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_de.properties",
+			"size": 7572,
+			"locale": "de",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_el.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_el.properties",
+			"size": 21571,
+			"locale": "el",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_en.properties",
+			"size": 6955,
+			"locale": "en",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_sappsd.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_en_US_sappsd.properties",
+			"size": 24188,
+			"locale": "en_US_sappsd",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_saptrc.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_en_US_saptrc.properties",
+			"size": 8670,
+			"locale": "en_US_saptrc",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_es.properties",
+			"size": 7649,
+			"locale": "es",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_et.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_et.properties",
+			"size": 7091,
+			"locale": "et",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fi.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_fi.properties",
+			"size": 7839,
+			"locale": "fi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_fr.properties",
+			"size": 8279,
+			"locale": "fr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hi.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_hi.properties",
+			"size": 19961,
+			"locale": "hi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hr.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_hr.properties",
+			"size": 7440,
+			"locale": "hr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hu.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_hu.properties",
+			"size": 9152,
+			"locale": "hu",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_it.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_it.properties",
+			"size": 7490,
+			"locale": "it",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_iw.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_iw.properties",
+			"size": 14989,
+			"locale": "iw",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ja.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_ja.properties",
+			"size": 12177,
+			"locale": "ja",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_kk.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_kk.properties",
+			"size": 20756,
+			"locale": "kk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ko.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_ko.properties",
+			"size": 10544,
+			"locale": "ko",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lt.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_lt.properties",
+			"size": 8540,
+			"locale": "lt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lv.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_lv.properties",
+			"size": 9077,
+			"locale": "lv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ms.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_ms.properties",
+			"size": 7074,
+			"locale": "ms",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_nl.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_nl.properties",
+			"size": 7102,
+			"locale": "nl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_no.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_no.properties",
+			"size": 7056,
+			"locale": "no",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pl.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_pl.properties",
+			"size": 8368,
+			"locale": "pl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_pt.properties",
+			"size": 7664,
+			"locale": "pt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ro.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_ro.properties",
+			"size": 8362,
+			"locale": "ro",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ru.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_ru.properties",
+			"size": 19176,
+			"locale": "ru",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sh.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_sh.properties",
+			"size": 7610,
+			"locale": "sh",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sk.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_sk.properties",
+			"size": 8373,
+			"locale": "sk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sl.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_sl.properties",
+			"size": 7689,
+			"locale": "sl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sv.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_sv.properties",
+			"size": 7315,
+			"locale": "sv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_th.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_th.properties",
+			"size": 20349,
+			"locale": "th",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_tr.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_tr.properties",
+			"size": 8540,
+			"locale": "tr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_uk.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_uk.properties",
+			"size": 20140,
+			"locale": "uk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_vi.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_vi.properties",
+			"size": 12061,
+			"locale": "vi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_CN.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_zh_CN.properties",
+			"size": 9249,
+			"locale": "zh_CN",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_TW.properties",
+			"module": "fin/gl/journalentry/upload/i18n/i18n_zh_TW.properties",
+			"size": 9284,
+			"locale": "zh_TW",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "localService/metadata.xml",
+			"size": 10301
+		},
+		{
+			"name": "localService/mockserver-dbg.js",
+			"size": 5265,
+			"isDebug": true
+		},
+		{
+			"name": "localService/mockserver.js",
+			"size": 2631
+		},
+		{
+			"name": "manifest.json",
+			"module": "fin/gl/journalentry/upload/manifest.json",
+			"size": 4232
+		},
+		{
+			"name": "model/formatter-dbg.js",
+			"module": "fin/gl/journalentry/upload/model/formatter.js",
+			"size": 1534,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/thirdparty/bignumber.js"
+			]
+		},
+		{
+			"name": "model/formatter.js",
+			"module": "fin/gl/journalentry/upload/model/formatter.js",
+			"size": 783,
+			"required": [
+				"sap/ui/core/format/DateFormat.js",
+				"sap/ui/thirdparty/bignumber.js"
+			]
+		},
+		{
+			"name": "model/models-dbg.js",
+			"module": "fin/gl/journalentry/upload/model/models.js",
+			"size": 1440,
+			"isDebug": true,
+			"required": [
+				"sap/ui/Device.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "model/models.js",
+			"module": "fin/gl/journalentry/upload/model/models.js",
+			"size": 736,
+			"required": [
+				"sap/ui/Device.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "resources.json",
+			"size": 19629
+		},
+		{
+			"name": "util/Constants-dbg.js",
+			"module": "fin/gl/journalentry/upload/util/Constants.js",
+			"size": 1325,
+			"isDebug": true
+		},
+		{
+			"name": "util/Constants.js",
+			"module": "fin/gl/journalentry/upload/util/Constants.js",
+			"size": 1104
+		},
+		{
+			"name": "util/Util-dbg.js",
+			"module": "fin/gl/journalentry/upload/util/Util.js",
+			"size": 2999,
+			"isDebug": true,
+			"required": [
+				"fin/gl/journalentry/upload/util/Constants.js"
+			]
+		},
+		{
+			"name": "util/Util.js",
+			"module": "fin/gl/journalentry/upload/util/Util.js",
+			"size": 1187,
+			"required": [
+				"fin/gl/journalentry/upload/util/Constants.js"
+			]
+		},
+		{
+			"name": "version.json",
+			"size": 356
+		},
+		{
+			"name": "view/App.view.xml",
+			"module": "fin/gl/journalentry/upload/view/App.view.xml",
+			"size": 329,
+			"required": [
+				"fin/gl/journalentry/upload/controller/App.controller.js",
+				"sap/m/App.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/DownloadDialog.fragment.xml",
+			"module": "fin/gl/journalentry/upload/view/DownloadDialog.fragment.xml",
+			"size": 2443,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/Dialog.js",
+				"sap/m/Label.js",
+				"sap/m/Panel.js",
+				"sap/m/RadioButton.js",
+				"sap/m/RadioButtonGroup.js",
+				"sap/m/Select.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/layout/form/SimpleForm.js"
+			]
+		},
+		{
+			"name": "view/NotFound.view.xml",
+			"module": "fin/gl/journalentry/upload/view/NotFound.view.xml",
+			"size": 498,
+			"required": [
+				"fin/gl/journalentry/upload/controller/NotFound.controller.js",
+				"sap/m/Link.js",
+				"sap/m/MessagePage.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/ObjectNotFound.view.xml",
+			"module": "fin/gl/journalentry/upload/view/ObjectNotFound.view.xml",
+			"size": 500,
+			"required": [
+				"fin/gl/journalentry/upload/controller/NotFound.controller.js",
+				"sap/m/Link.js",
+				"sap/m/MessagePage.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/Upload.view.xml",
+			"module": "fin/gl/journalentry/upload/view/Upload.view.xml",
+			"size": 13217,
+			"required": [
+				"fin/gl/journalentry/upload/controller/Upload.controller.js",
+				"sap/m/Button.js",
+				"sap/m/DateRangeSelection.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/Label.js",
+				"sap/m/ObjectStatus.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Panel.js",
+				"sap/m/Text.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/VBox.js",
+				"sap/m/semantic/FullscreenPage.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/table/Column.js",
+				"sap/ui/table/Table.js",
+				"sap/ui/table/plugins/MultiSelectionPlugin.js",
+				"sap/ui/unified/FileUploader.js"
+			]
+		}
+	]
+}

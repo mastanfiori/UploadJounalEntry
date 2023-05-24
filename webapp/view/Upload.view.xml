@@ -1,0 +1,241 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:View 
+	controllerName="fin.gl.journalentry.upload.controller.Upload"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar"
+	xmlns:unified="sap.ui.unified"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:smartfield= "sap.ui.comp.smartfield"
+	xmlns:smartlink="sap.ui.comp.navpopover"
+	xmlns:table="sap.ui.table"
+	xmlns:plugins="sap.ui.table.plugins"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<semantic:FullscreenPage id="sap.fin.gl.journalentry.upload.UploadPage"
+							 navButtonPress="onNavBack"
+							 showNavButton="true"
+		                     title="{i18n>UploadViewTitle}"
+		                     busyIndicatorDelay="0" enableScrolling="true"
+		                     class="sapFioriListReportPageOverflow">
+		<semantic:content>
+		<VBox id="sap.fin.gl.journalentry.upload.UploadPage.Vbox" height="100%">
+			<Panel>
+				<FlexBox id="sap.fin.gl.journalentry.upload.flexBox" alignItems="Center" height="4rem" justifyContent="Center">
+						<unified:FileUploader id="sap.fin.gl.journalentry.upload.Uploader" name="postingExcelUpload" width="400px" 
+		                        tooltip="{i18n>SelectFile}" change="onFileChange" icon="sap-icon://open-folder" class="sapUiSmallMarginEnd"
+		                        uploadComplete="handleUploadComplete" uploadAborted="handleUploadAborted" fileAllowed="onFileAllowed"
+		                        fileType="csv,xlsx" sendXHR="true" sameFilenameAllowed="true" uploadOnChange="false" useMultipart="false" placeholder="{i18n>UploadHint}"/>
+		       </FlexBox>
+		    </Panel>
+	    	<VBox class="sapUiMediumMarginBeginEnd sapUiTinyMarginTopBottom"
+				id="sap.fin.gl.journalentry.upload.UploadPage.MessageStripVbox"
+				visible="false"/>
+		    <smarttable:SmartTable
+				    id="sap.fin.gl.journalentry.upload.HeldDoc.SmartTable"
+				    tableType="Table"
+				    showRowCount="true"
+				    useExportToExcel="true"
+				    enableAutoBinding="false"
+				    enableCustomFilter="true"
+				    useTablePersonalisation="true"
+				    class="sapFioriListReportTable"
+				    entitySet="UploadedDocWorklistItems"
+				    beforeRebindTable="onBeforeRebindViewHeldDocsTable"
+				    dataReceived="onTableDataReceived"
+				    initialise="onSmartTableInitialise"
+				    useVariantManagement="false"
+				    height="100%"
+				    persistencyKey="sap.fin.gl.journalentry.upload.HeldDoc.SmartTable.Key"
+				    initiallyVisibleFields="CompanyCode,PostingDate,CreationDateTime"
+				    requestAtLeastFields="BatchId,DocumentSequence,AccountingDocumentCategory,AccountingDocumentStatusName,FiscalYear,HoldDocumentKey,TransactionCode,ParentDraftKey,CompanyCode,CompanyCodeName,ExchangeRateDate"
+				    ignoredFields="AccountingDocumentCategory,AccountingDocumentStatusName,FiscalYear,ParentDraftKey,HoldDocumentKey,TransactionCode,CompanyCodeName,CompanyCodeCurrency,TransactionCurrency,CreatedByUser,ExchangeRateDate">
+				<smarttable:semanticObjectController>
+					<smartlink:SemanticObjectController navigationTargetsObtained="onNavTargetsObtained" beforePopoverOpens="onBeforePopverOpens"/>
+				</smarttable:semanticObjectController>
+				<smarttable:layoutData>
+                        <FlexItemData growFactor="1" />
+                </smarttable:layoutData>
+				<smarttable:customToolbar>
+			           <OverflowToolbar id="sap.fin.gl.journalentry.upload.overflowToolbar" design="Transparent">
+							<Label id="sap.fin.gl.journalentry.upload.label.daterange" 
+								text="{i18n>CreationDate}" 
+								labelFor="sap.fin.gl.journalentry.upload.DateRange"/>
+							<DateRangeSelection id="sap.fin.gl.journalentry.upload.DateRange" 
+								change="handleDateRangeChange" 
+								width="15rem"/>
+							<!--<Button id="sap.fin.gl.journalentry.upload.button.searchByDate" -->
+							<!--	text="{i18n>GoBtm}" -->
+							<!--	enabled="true" -->
+							<!--	press="onSearchByDate" -->
+							<!--	type="Emphasized" -->
+							<!--	tooltip="{i18n>GoBtm}"-->
+							<!--	visible="false"/>-->
+							<ToolbarSpacer />
+							<Button id="sap.fin.gl.journalentry.upload.button.refresh"
+								icon="sap-icon://refresh" 
+								enabled="true" 
+								press="onToolbarRefresh"
+								text="" 
+								type="Transparent" />
+			           </OverflowToolbar>
+		         </smarttable:customToolbar>
+				
+				<table:Table id="sap.fin.gl.journalentry.upload.HeldDoc.table" 
+				             visibleRowCountMode="Auto"
+				             selectionMode="MultiToggle"
+				             cellClick="onClickCell"
+				             customFilter="onCustomFilter"
+                             enableColumnReordering="true"
+                             enableCustomFilter="true"
+                             enableCellFilter="true"
+                             threshold="700"
+                             width="100%">
+                             
+	                <!-- Enable Select All -->         
+	                <table:plugins>
+	                	<plugins:MultiSelectionPlugin limit="0" selectionChange="onRowSelectionChange"/>
+	                </table:plugins>
+                             
+                    <table:columns>
+                		<table:Column id="sap.fin.gl.journalentry.upload.HeldDoc.TemporaryId.Column" width="18%"
+				                  tooltip="{/#UploadedDocWorklistItem/TemporaryId/@sap:quickinfo}" visible="true">
+				                  <Label id="sap.fin.gl.journalentry.upload.HeldDoc.TemporaryId.Label" text="{/#UploadedDocWorklistItem/TemporaryId/@sap:label}"/>
+				                  <table:template>
+				                  	<smartlink:SmartLink id="sap.fin.gl.journalentry.upload.HeldDoc.TemporaryId.smartLink" 
+				                  		semanticObject="AccountingDocument" 
+				                  		text="{TemporaryId}"/>
+				                  </table:template>
+				                  <table:customData>
+                                        <core:CustomData key="p13nData"
+                                                         value='\{"columnKey": "TemporaryId", "leadingProperty": "TemporaryId", "columnIndex": "0"\}' />
+                                  </table:customData>
+			        	</table:Column>
+			        	<table:Column id="sap.fin.gl.journalentry.upload.HeldDoc.BatchId.Column" filterProperty="BatchId" width="10%"
+				                  tooltip="{/#UploadedDocWorklistItem/BatchId/@sap:label}" visible="true">
+				                  <Label id="sap.fin.gl.journalentry.upload.HeldDoc.BatchId.Label" text="{/#UploadedDocWorklistItem/BatchId/@sap:label}"/>
+				                  <table:template>
+					                    <Text wrapping="false" text="{BatchId}"/>
+				                  </table:template>
+				                  <table:customData>
+                                        <core:CustomData key="p13nData"
+                                                         value='\{"columnKey": "BatchId", "leadingProperty": "BatchId", "columnIndex": "1"\}' />
+                                  </table:customData>
+			        	</table:Column>
+			        	<table:Column id="sap.fin.gl.journalentry.upload.column.documentSequence" width="10%"
+				                  tooltip="{/#UploadedDocWorklistItem/DocumentSequence/@sap:label}" visible="true">
+				                  <Label text="{/#UploadedDocWorklistItem/DocumentSequence/@sap:label}"/>
+				                  <table:template>
+					                    <Text wrapping="false" text="{DocumentSequence}"/>
+				                  </table:template>
+				                  <table:customData>
+                                        <core:CustomData key="p13nData"
+                                                         value='\{"columnKey": "DocumentSequence", "leadingProperty": "DocumentSequence", "columnIndex": "2"\}' />
+                                  </table:customData>
+			        	</table:Column>
+			        	<!-- Status -->
+						<table:Column id="fin.gl.journalentry.upload.HeldDoc.AccountingDocumentStatus.Column" hAlign="Center"
+							tooltip="{/#UploadedDocWorklistItem/AccountingDocumentStatus/@sap:label}" visible="true">
+							<Label text="{/#UploadedDocWorklistItem/AccountingDocumentStatus/@sap:label}" />
+							<table:template>
+								<ObjectStatus text="{AccountingDocumentStatusName}"
+											  state="{
+														path: 'AccountingDocumentStatus',
+														formatter: '.formatter.formatParkedDocumentStatus'
+											        }"
+								/>
+							</table:template>
+							<table:customData>
+								<core:CustomData key="p13nData"
+									value='\{"columnKey": "AccountingDocumentStatus", "leadingProperty": "AccountingDocumentStatus", "columnIndex": "3"\}' />
+							</table:customData>
+						</table:Column>
+						<!-- Document Number -->
+			        	<table:Column id="sap.fin.gl.journalentry.upload.HeldDoc.AccountingDocument.Column" sortProperty="AccountingDocument" width="10%"
+				                  tooltip="{/#UploadedDocWorklistItem/AccountingDocument/@sap:label}" visible="true">
+				                  <Label id="sap.fin.gl.journalentry.upload.HeldDoc.AccountingDocument.Label" text="{/#UploadedDocWorklistItem/AccountingDocument/@sap:label}"/>
+				                  <table:template>
+									<smartlink:SmartLink id="sap.fin.gl.journalentry.upload.HeldDoc.AccountingDocument.smartLink" 
+										semanticObject="AccountingDocument" 
+										text="{AccountingDocument}" />
+				                  </table:template>
+				                  <table:customData>
+                                        <core:CustomData key="p13nData"
+                                                         value='\{"columnKey": "AccountingDocument", "leadingProperty": "AccountingDocument", "columnIndex": "4"\}' />
+                                  </table:customData>
+			        	</table:Column>
+			        	<table:Column id="sap.fin.gl.journalentry.upload.HeldDoc.CreationDateTime.Column" sortProperty="CreationDateTime"
+				                  tooltip="{/#UploadedDocWorklistItem/CreationDateTime/@sap:label}" visible="true">
+				                  <Label id="sap.fin.gl.journalentry.upload.HeldDoc.CreationDateTime.Label" text="{/#UploadedDocWorklistItem/CreationDateTime/@sap:label}"/>
+				                  <table:template>
+				                		<Label text="{path:'CreationDateTime', type:'sap.ui.model.type.DateTime' }" />
+				                  </table:template>
+				                  <table:customData>
+                                        <core:CustomData key="p13nData"
+                                                         value='\{"columnKey": "CreationDateTime", "leadingProperty": "CreationDateTime", "columnIndex": "8", "type":"datetime"\}' />
+                                  </table:customData>
+			        	</table:Column>
+			        	<table:Column id="sap.fin.gl.journalentry.upload.HeldDoc.ReversalReason.Column"
+				                  tooltip="{/#UploadedDocWorklistItem/ReversalReason/@sap:label}" visible="false">
+				                  <Label id="sap.fin.gl.journalentry.upload.HeldDoc.ReversalReason.Label" text="{/#UploadedDocWorklistItem/ReversalReason/@sap:label}"/>
+				                  <table:template>
+								    	<smartfield:SmartField value="{ReversalReason}"
+								    	                       editable="false" contextEditable="false" wrapping="false">
+									        <smartfield:configuration>
+										        <smartfield:Configuration controlType="dropDownList" displayBehaviour="idAndDescription"/>
+									        </smartfield:configuration>
+								        </smartfield:SmartField>
+				                  </table:template>
+				                  <table:customData>
+                                        <core:CustomData key="p13nData"
+                                                         value='\{"columnKey": "ReversalReason", "leadingProperty": "ReversalReason"\}' />
+                                  </table:customData>
+			        	</table:Column>
+			        </table:columns>
+                </table:Table>
+			</smarttable:SmartTable>
+		</VBox>
+		</semantic:content>
+		
+		<semantic:customFooterContent>
+			<!-- Post -->
+			<Button id="sap.fin.gl.journalentry.upload.btnPost"  
+				tooltip="{i18n>Post}" 
+				type="{ui>/postBtnEmphasized}"
+				text="{i18n>Post}"
+				press="onPostPressed" 
+				visible="{ui>/postBtnVisible}"
+				enabled="{ui>/postBtnEnabled}"/>
+			<!-- Submit -->
+			<Button id="sap.fin.gl.journalentry.upload.btnSubmit"  
+				tooltip="{i18n>Submit}" 
+				type="{ui>/submitBtnEmphasized}"
+				text="{i18n>Submit}" 
+				press="onSubmitPressed" 
+				visible="{ui>/submitBtnVisible}"
+				enabled="{ui>/submitBtnEnabled}"/>
+			<!-- Application Log -->
+			<Button id="sap.fin.gl.journalentry.upload.btnShowLog"  
+				tooltip="{i18n>ShowLog}" 
+				type="Transparent" 
+				text="{i18n>ShowLog}" 
+				press="onShowLogButtonPressed"/>
+			<!-- Download Template -->
+			<Button id="sap.fin.gl.journalentry.upload.btnDownload" 
+				class="sapUiSmallMarginEnd" 
+				tooltip="{i18n>DownloadTemplate}" 
+				type="Transparent"  
+				text="{i18n>DownloadTemplate}" 
+				press="onDownloadPress"/>
+		</semantic:customFooterContent>
+
+	</semantic:FullscreenPage>
+
+</core:View>

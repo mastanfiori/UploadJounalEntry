@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='SFINODATA1')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='SFINODATA1')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="FAC_FINANCIALS_POSTING_SRV" sap:schema-version="1" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="UploadedDocWorklistItem" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="AccountingDocument"/>
+					<PropertyRef Name="HoldDocumentKey"/>
+					<PropertyRef Name="CompanyCode"/>
+					<PropertyRef Name="FiscalYear"/>
+					<PropertyRef Name="BatchId"/>
+					<PropertyRef Name="DocumentSequence"/>
+				</Key>
+				<Property MaxLength="10" Name="AccountingDocument" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:filterable="false" sap:label="Journal Entry" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="ParentDraftKey" Nullable="false" Type="Edm.Guid" sap:creatable="false" sap:filterable="false" sap:label="RAW16" sap:sortable="false" sap:unicode="false" sap:updatable="false" sap:visible="false"/>
+				<Property Name="HoldDocumentKey" Nullable="false" Type="Edm.Guid" sap:creatable="false" sap:filterable="false" sap:label="RAW16" sap:sortable="false" sap:unicode="false" sap:updatable="false" sap:visible="false"/>
+				<Property MaxLength="12" Name="CreatedByUser" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:filterable="false" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="TemporaryId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:filterable="false" sap:label="Temporary ID" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="TransactionCode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:filterable="false" sap:label="Transaction Code" sap:sortable="false" sap:unicode="false" sap:updatable="false" sap:value-list="standard"/>
+				<Property MaxLength="4" Name="CompanyCode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Company Code" sap:text="CompanyCodeName" sap:unicode="false" sap:updatable="false" sap:value-list="standard"/>
+				<Property Name="PostingDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:display-format="Date" sap:filterable="false" sap:label="Posting Date" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="CompanyCodeName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Company Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="CreationDateTime" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="FiscalYear" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Fiscal Year" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="BatchId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="1" Name="AccountingDocumentCategory" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:filterable="false" sap:label="Document Status" sap:sortable="false" sap:unicode="false" sap:updatable="false" sap:value-list="fixed-values"/>
+				<Property MaxLength="100" Name="AccountingDocumentStatus" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:filterable="false" sap:label="Status" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="AccountingDocumentStatusName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:filterable="false" sap:label="Status Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="5" Name="CompanyCodeCurrency" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:filterable="false" sap:label="Local Currency" sap:semantics="currency-code" sap:sortable="false" sap:unicode="false" sap:updatable="false" sap:value-list="standard"/>
+				<Property Name="AmountInCompanyCodeCurrency" Nullable="false" Precision="13" Scale="2" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:unicode="false" sap:unit="CompanyCodeCurrency" sap:updatable="false"/>
+				<Property MaxLength="5" Name="TransactionCurrency" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:filterable="false" sap:label="Transaction Currency" sap:semantics="currency-code" sap:sortable="false" sap:unicode="false" sap:updatable="false" sap:value-list="standard"/>
+				<Property Name="AmountInTransactionCurrency" Nullable="false" Precision="13" Scale="2" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Amount in Trans Crcy" sap:unicode="false" sap:unit="TransactionCurrency" sap:updatable="false"/>
+				<Property Name="ExchangeRateDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:display-format="Date" sap:filterable="false" sap:label="Translation dte" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="DocumentSequence" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<ComplexType Name="HoldDocumentCount">
+				<Property Name="HeaderCount" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false" sap:label="Signed INT2 / int16" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="ItemCount" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false" sap:label="Signed INT2 / int16" sap:sortable="false" sap:updatable="false"/>
+			</ComplexType>
+			<ComplexType Name="HoldDocumentPostReturn">
+				<Property Name="NumberOfAcctgDocsWithErrors" Nullable="false" Precision="5" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="NumberOfAcctgDocsWithWarnings" Nullable="false" Precision="5" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="NumberOfPostedAcctgDocs" Nullable="false" Precision="5" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+			</ComplexType>
+			<ComplexType Name="HoldDocumentParkReturn">
+				<Property Name="NumberOfAcctgDocsWithErrors" Nullable="false" Precision="5" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="NumberOfAcctgDocsWithWarnings" Nullable="false" Precision="5" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="NumberOfParkedAcctgDocs" Nullable="false" Precision="5" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+			</ComplexType>
+			<EntityContainer Name="FAC_FINANCIALS_POSTING_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet EntityType="FAC_FINANCIALS_POSTING_SRV.UploadedDocWorklistItem" Name="UploadedDocWorklistItems" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<FunctionImport Name="GetHoldDocumentItemCount" ReturnType="FAC_FINANCIALS_POSTING_SRV.HoldDocumentCount" m:HttpMethod="GET">
+					<Parameter Mode="In" Name="HoldDocumentID" Type="Edm.String"/>
+				</FunctionImport>
+				<FunctionImport Name="HoldDocumentPost" ReturnType="FAC_FINANCIALS_POSTING_SRV.HoldDocumentPostReturn" m:HttpMethod="POST">
+					<Parameter MaxLength="12" Mode="In" Name="BatchInputSession" Nullable="true" Type="Edm.String"/>
+					<Parameter Mode="In" Name="IgnoreWarnings" Nullable="true" Type="Edm.Boolean"/>
+					<Parameter Mode="In" Name="HoldDocumentGUID" Nullable="true" Type="Edm.Guid"/>
+				</FunctionImport>
+				<FunctionImport Name="HoldDocumentPark" ReturnType="FAC_FINANCIALS_POSTING_SRV.HoldDocumentParkReturn" m:HttpMethod="POST">
+					<Parameter MaxLength="12" Mode="In" Name="BatchInputSession" Nullable="true" Type="Edm.String"/>
+					<Parameter Mode="In" Name="IgnoreWarnings" Nullable="true" Type="Edm.Boolean"/>
+					<Parameter Mode="In" Name="HoldDocumentGUID" Nullable="true" Type="Edm.Guid"/>
+				</FunctionImport>
+				<FunctionImport Name="HoldDocumentRestore" ReturnType="FAC_FINANCIALS_POSTING_SRV.AcctgDocTmpKey" m:HttpMethod="POST">
+					<Parameter MaxLength="1" Mode="In" Name="TmpIdType" Nullable="true" Type="Edm.String"/>
+					<Parameter MaxLength="22" Mode="In" Name="TmpId" Nullable="true" Type="Edm.String"/>
+					<Parameter Mode="In" Name="HoldDocumentGuid" Type="Edm.Guid"/>
+				</FunctionImport>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
